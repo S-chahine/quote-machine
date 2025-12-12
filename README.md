@@ -5,7 +5,7 @@ Quote Machine fetches random inspirational quotes from an external API and lets 
 
 - Generate a new quote
 - Copy the quote to the clipboard
-- Share it to social platforms (X, Instagram, TikTok, etc.)
+- Share it to social platforms (X, Instagram, and Facebook)
 
 ---
 
