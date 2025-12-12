@@ -11,8 +11,8 @@ Quote Machine fetches random inspirational quotes from an external API and lets 
 
 ## 🌐 Live Demo
 
-> 🔗 **Live Site:** _[Add your GitHub Pages or hosting link here]_  
-> e.g. `https://S-chahine.github.io/quote-machine/`
+> 🔗 **Live Site:** _[https://S-chahine.github.io/quote-machine/]_  
+
 
 ---
 
