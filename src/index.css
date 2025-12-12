@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 14% 4%;
+    --foreground: 60 9% 98%;
+    
+    --card: 20 10% 8%;
+    --card-foreground: 60 9% 98%;
+    
+    --popover: 20 10% 8%;
+    --popover-foreground: 60 9% 98%;
+    
+    --primary: 16 100% 66%;
+    --primary-foreground: 20 14% 4%;
+    
+    --secondary: 330 80% 60%;
+    --secondary-foreground: 60 9% 98%;
+    
+    --muted: 20 10% 15%;
+    --muted-foreground: 20 10% 60%;
+    
+    --accent: 270 70% 60%;
+    --accent-foreground: 60 9% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 9% 98%;
+    
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 16 100% 66%;
+    
+    --radius: 1rem;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(16 100% 66%), hsl(330 80% 60%), hsl(270 70% 60%));
+    --gradient-bg: linear-gradient(135deg, hsl(16 100% 50%), hsl(330 80% 50%), hsl(270 70% 50%));
+    --gradient-glass: linear-gradient(135deg, hsla(0 0% 100% / 0.1), hsla(0 0% 100% / 0.05));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsla(16 100% 66% / 0.3), 0 0 120px hsla(330 80% 60% / 0.2);
+    --shadow-card: 0 25px 50px -12px hsla(0 0% 0% / 0.5);
+    
+    --sidebar-background: 20 10% 8%;
+    --sidebar-foreground: 60 9% 98%;
+    --sidebar-primary: 16 100% 66%;
+    --sidebar-primary-foreground: 20 14% 4%;
+    --sidebar-accent: 20 10% 15%;
+    --sidebar-accent-foreground: 60 9% 98%;
+    --sidebar-border: 20 10% 20%;
+    --sidebar-ring: 16 100% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6, blockquote {
+    font-family: 'Crimson Pro', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: var(--gradient-bg);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+  
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+  }
+  
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .quote-shadow {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
